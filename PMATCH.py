@@ -599,7 +599,7 @@ def isPE(file, rp): #Tests files against expected DOS/EXE header for typical PE 
         print("ERROR READING "+file)
 
    
-def scanTmp(file, rp): #Scans input files from scanforPE/isPE (which does nothing for now), Gets value error if file for some reason is read wrong (permissions error, etc)
+def scanTmp(file, rp): #Scans input files from scanforPE/isPE (which does nothing for now), Gets value error if file for some reason is read wrong (permissions error, etc), passes to appropriate functions for extraction/comparisons
     global dumptmp
     global tmpread
     global skiplist
@@ -818,6 +818,7 @@ def stringCompare(fname, a, b): #Where A is list of strings dumped from temp. fi
     #print(lensb)
     x = 0
     y = 0
+    listtmp = []
     count = 0
     #print("Test1")
     #while x < lensb: #iterates through all strings from binary dump
@@ -833,7 +834,9 @@ def stringCompare(fname, a, b): #Where A is list of strings dumped from temp. fi
             #if (p == q): #Original
             #print(p) #Testing
             #print(q) #Testing
-            if (str(q) in str(p)): #Switched to this because List comparison is weird and I didn't want to slice characters from start/end again
+            
+            if (str(q) in str(p)) and (str(q) not in listtmp): #Switched to this because List comparison is weird and I didn't want to slice characters from start/end again
+                listtmp.append(str(q))
                 count = count + 1
                 stringmatches.append(str(q)) #
             else:
