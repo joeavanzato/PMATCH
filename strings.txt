@@ -19,3 +19,11 @@ root
 qwerty
 SunMonTueWedThuFriSat
 JanFebMarAprMayJunJulAugSepOctNovDec
+FindFirstFileA
+FindNextFileA
+FindClose
+malloc
+CloseHandle
+UnmapViewOfFile
+CreateFileMappingA
+CreateFileA
