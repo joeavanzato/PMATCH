@@ -1,5 +1,5 @@
 # PMATCH
-# Recursive File-Hasher and String-Matcher
+# Hasher, String % Checker, 'Magic Number' Signature Checking
 
 
 This is designed to do 3 things;
